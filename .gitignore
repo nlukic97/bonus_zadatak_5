@@ -1,0 +1,2 @@
+# Avoid adding node modules to the repo
+node_modules
