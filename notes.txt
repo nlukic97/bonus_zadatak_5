@@ -1,0 +1,6 @@
+- when the screen has scrolled a certain amount towards the end (say, only two or three scrolls left), generate more content.
+- component for element design required
+- generate more, and then construct new container and append to the container where the components are present, and do that for each object in the array of random image results
+- 50 requests per page, so watch out how you use it or you might get banned (generate 30 per page at first)
+- json dummy data is present, just use that for now
+- 
