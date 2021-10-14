@@ -14,8 +14,7 @@ function getPhotots(){
     return JSON.parse(localStorage.getItem('api_data'))
 }
 
-let data = getPhotots()
-console.log(data[1]);
+
 
 
 
@@ -28,6 +27,7 @@ function appendElement(data){
                 download:img,
                 html
             },
+            urls,
             user:{
                 username, 
                 portfolio_url:portfolio, 
@@ -42,6 +42,32 @@ function appendElement(data){
 
         //default alt tag to be added to image
         alt = (alt==='' || alt === null) ? 'Unsplash image' : alt;
+
+
+
+        let div = document.createElement('div')
+        div.innerHTML = `
+        <p>${username}</p>
+        <p>Likes: ${likes}</p>
+        <p>downloads: ${downloads}</p>
+        <img src='${urls.small}' alt='${alt}'/>
+        <img src='${avatars.large}' alt='${alt}'/>
+        <a href='${html}' target='_blank'>Link</a>
+        <a href='${portfolio}' target='_blank'>Portfolio</a>`;
+
+
+        document.querySelector('.images').appendChild(div)
 }
 
-appendElement(data[0])
+
+
+
+function appendElements(api_result){
+    api_result.forEach(img=>{
+        appendElement(img)
+    })
+}
+
+let data = getPhotots()
+appendElements(data)
+//read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
