@@ -1,3 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 
+.loader {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+.loader .circle {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  background-color: rgba(170, 170, 170, 0.986);
+  position: absolute;
+  opacity: 30%;
+}
+.loader .circle:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeInOut 1200ms linear infinite forwards;
+}
+.loader .circle:nth-child(2) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeInOut 1200ms linear 300ms infinite forwards;
+}
+.loader .circle:nth-child(3) {
+  top: 50%;
+  left: 80%;
+  transform: translateY(-50%);
+  animation: fadeInOut 1200ms linear 600ms infinite forwards;
+}
+.loader .circle:nth-child(4) {
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeInOut 1200ms linear 900ms infinite forwards;
+}
+.loader .circle:nth-child(5) {
+  top: 12%;
+  left: 12%;
+  animation: fadeInOut 1200ms linear 150ms infinite forwards;
+}
+.loader .circle:nth-child(6) {
+  top: 12%;
+  left: 68%;
+  animation: fadeInOut 1200ms linear 450ms infinite forwards;
+}
+.loader .circle:nth-child(7) {
+  top: 68%;
+  left: 12%;
+  animation: fadeInOut 1200ms linear 1050ms infinite forwards;
+}
+.loader .circle:nth-child(8) {
+  top: 68%;
+  left: 68%;
+  animation: fadeInOut 1200ms linear 750ms infinite forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 20%;
+  }
+  15% {
+    opacity: 100%;
+  }
+  30% {
+    opacity: 20%;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
