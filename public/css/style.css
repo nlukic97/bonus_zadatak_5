@@ -7,6 +7,56 @@ body {
   background-color: #A2D2FF;
 }
 
+.card {
+  width: 500px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  margin: 0 auto;
+}
+.card .image {
+  width: 100%;
+}
+.card .text-content {
+  padding: 10px 15px;
+}
+.card .text-content .line-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .text-content .line-1 .avatar-username-container {
+  display: flex;
+  align-items: center;
+}
+.card .text-content .line-1 .avatar-username-container .avatar {
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+}
+.card .text-content .line-1 .avatar-username-container .username {
+  font-weight: bold;
+  padding-left: 10px;
+}
+.card .text-content .links {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 10px 10px;
+}
+.card .text-content .links a {
+  text-decoration: none;
+  color: #000;
+}
+.card .text-content .links a:hover {
+  text-decoration: underline;
+}
+.card .text-content .links span.unavailable {
+  opacity: 0.5;
+}
+.card .text-content .links span.unavailable:hover {
+  text-decoration: none;
+  cursor: default;
+}
+
 .loader {
   width: 200px;
   height: 200px;

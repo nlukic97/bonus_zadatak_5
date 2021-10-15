@@ -69,5 +69,7 @@ function appendElements(api_result){
 }
 
 let data = getPhotots()
-appendElements(data)
+// console.log(data);
+
+// appendElements(data)
 //read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
