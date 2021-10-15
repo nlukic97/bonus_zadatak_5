@@ -1,10 +1,12 @@
 
 
 .card {
-    width: 500px;
+    // width: 500px;
+    width: 90%;
+    max-width: 500px;
     overflow: hidden;
     background-color: whitesmoke;
-    margin: 0 auto;
+    margin: 40px auto 0;
 
     .image {
         width: 100%;
@@ -36,12 +38,16 @@
         }
 
         .links {
-            display: flex;
+            display: flex; //maybe make this grid ?
             justify-content: space-between;
 
             padding:20px 0 10px 10px;
+
+            a, span {
+                margin-right: 10px;
+            }
+
             a {
-                // flex: 1;
                 text-decoration: none;
                 color: #000;
 

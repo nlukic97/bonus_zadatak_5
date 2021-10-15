@@ -8,10 +8,11 @@ body {
 }
 
 .card {
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
   overflow: hidden;
   background-color: whitesmoke;
-  margin: 0 auto;
+  margin: 40px auto 0;
 }
 .card .image {
   width: 100%;
@@ -41,6 +42,9 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px 0 10px 10px;
+}
+.card .text-content .links a, .card .text-content .links span {
+  margin-right: 10px;
 }
 .card .text-content .links a {
   text-decoration: none;

@@ -45,8 +45,10 @@ function appendElement(data){
 
 
 
+        let e = document.createElement('div')
         let div = document.createElement('div')
-        div.innerHTML = `
+
+        e.innerHTML = `
         <p>${username}</p>
         <p>Likes: ${likes}</p>
         <p>downloads: ${downloads}</p>
@@ -55,11 +57,47 @@ function appendElement(data){
         <a href='${html}' target='_blank'>Link</a>
         <a href='${portfolio}' target='_blank'>Portfolio</a>`;
 
+        div.classList.add('card')
+
+        div.innerHTML = 
+        `<img class='image' src="${urls.small}" alt="Unsplash image">
+                
+        <div class="text-content">
+            <div class="line-1">
+                <div class="avatar-username-container">
+                    <img class='avatar' src="${avatars.large}" alt="${alt}">
+                    <span class="username">${username}</span>
+                </div>
+
+                <div class="likes-downloads-container">
+                    <span><i class="fas fa-thumbs-up"></i> ${likes}</span>
+                    <span><i class="fas fa-download"></i> ${downloads}</span>
+                </div>
+            </div>
+
+            <div class="links">
+                ${handleUrls(html,'fab fa-unsplash','Unsplash')}
+                ${handleUrls(portfolio,'fas fa-photo-video','Portfolio')}
+                ${handleUrls(handleSocialUsernames('twitter',twitter),'fab fa-twitter','Twitter')}
+                ${handleUrls(handleSocialUsernames('instagram',instagram),'fab fa-instagram','Instagram')}
+            </div>
+        </div>`;
+
 
         document.querySelector('.images').appendChild(div)
 }
 
+function handleUrls(url, font_awesome_class, text){
+    if(url === null || url === ''){
+        return  `<span class="unavailable"><i class="${font_awesome_class}"></i> ${text}</span>`
+    } else {
+        return `<a href="${url}" target="_blank"><i class="${font_awesome_class}"></i> ${text}</a>`;
+    };
+}
 
+function handleSocialUsernames(platform, username){
+    return (username === '' || username === null) ? null : `https://${platform}.com/${username}`
+}
 
 
 function appendElements(api_result){
@@ -71,5 +109,5 @@ function appendElements(api_result){
 let data = getPhotots()
 // console.log(data);
 
-// appendElements(data)
+appendElements(data)
 //read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
