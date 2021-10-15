@@ -37,14 +37,8 @@
 @media screen and(min-width: 1150px) {
     .images {
         grid-template-columns: repeat(3,1fr);
+        margin: 0 auto;
         // gap: 40px;
     }
 }
 
-@media screen and(min-width: 1440px) {
-    .images {
-        grid-template-columns: repeat(4,1fr);
-        // gap: 40px;
-        margin: 0 auto;
-    }
-}

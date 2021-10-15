@@ -179,11 +179,6 @@ body {
 @media screen and (min-width: 1150px) {
   .images {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (min-width: 1440px) {
-  .images {
-    grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
   }
 }
