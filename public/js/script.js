@@ -44,23 +44,11 @@ function appendElement(data){
         alt = (alt==='' || alt === null) ? 'Unsplash image' : alt;
 
 
-
-        let e = document.createElement('div')
         let div = document.createElement('div')
-
-        e.innerHTML = `
-        <p>${username}</p>
-        <p>Likes: ${likes}</p>
-        <p>downloads: ${downloads}</p>
-        <img src='${urls.small}' alt='${alt}'/>
-        <img src='${avatars.large}' alt='${alt}'/>
-        <a href='${html}' target='_blank'>Link</a>
-        <a href='${portfolio}' target='_blank'>Portfolio</a>`;
-
         div.classList.add('card')
 
         div.innerHTML = 
-        `<img class='image' src="${urls.small}" alt="Unsplash image" onclick="openWindow('${urls.small}')">
+        `<img class='image' src="${urls.small}" alt="Unsplash image" onclick="openLightbox('${urls.regular}')">
                 
         <div class="text-content">
             <div class="line-1">
@@ -112,6 +100,14 @@ let data = getPhotots()
 appendElements(data)
 //read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
 
-function openWindow(url){
-    console.log(url);
+
+// toggle the lightbox
+function openLightbox(url){
+    document.querySelector('#lightbox-image').src = url
+    document.body.classList.add('lightbox-on')
+}
+
+function closeLightbox(){
+    document.body.classList.remove('lightbox-on')
+    document.querySelector('#lightbox-image').src = ''
 }
