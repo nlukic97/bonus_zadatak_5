@@ -12,7 +12,7 @@
     }
 
     .text-content {
-        padding: 10px 15px;
+        padding: 10px 15px 30px;
         background-color: whitesmoke;
 
         .line-1 {
@@ -28,6 +28,7 @@
                     border-radius: 50%;
                     width: 33px;
                     height: 33px;
+                    border: 2px solid #6473fd;
                 }
         
                 .username {
@@ -41,17 +42,28 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
+                font-weight: 500;
+
+                .likes-icon {
+                    color: #6473fd;
+                }
+
+                .downloads-icon {
+                    color:#9964fd;
+                }
+                
             }
         }
 
         .links {
-            display: flex; //maybe make this grid ?
-            justify-content: space-between;
-
-            padding:20px 0 10px 10px;
+            // display: flex; //maybe make this grid ?
+            // justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+            padding: 20px 0 0 50px;
 
             a, span {
-                margin-right: 10px;
             }
 
             a {

@@ -8,6 +8,11 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/279db593be.js" crossorigin="anonymous"></script>
+
+    <!-- Font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -15,50 +20,32 @@
     <!-- JavaScript -->
     <script src="js/script.js" defer></script>
 </head>
-<body>
+<body class="">
     
     <!-- Spinner loader -->
-    <!-- <div class="loader">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+    <!-- <div class="loader-container">
+        <div class="loader">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
     </div> -->
     
     <div class="container">
+
+        <!-- Where the loaded images will go -->
         <div class="images">
+        </div>
+    </div>
 
-            <!-- ******** card component ******** -->
-            <!-- <div class="card">
-                <img class='image' src="https://images.unsplash.com/photo-1619084904621-a09493e20701?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwyNjczNjh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzQxNTQ5NDI&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400" alt="Unsplash image">
-                
-                <div class="text-content">
-                    <div class="line-1">
-                        <div class="avatar-username-container">
-                            <img class='avatar' src="https://images.unsplash.com/profile-1617122720748-a895bedd975cimage?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=faces&amp;cs=tinysrgb&amp;fit=crop&amp;h=128&amp;w=128" alt="Unsplash image">
-                            <span class="username">sunx</span>
-                        </div>
-        
-                        <div class="likes-downloads-container">
-                            <span><i class="fas fa-thumbs-up"></i> 61</span>
-                            <span><i class="fas fa-download"></i> 2928</span>
-                        </div>
-                    </div>
-
-                    <div class="links">
-                        <a href="https://unsplash.com/photos/LpZtpaplYt8" target="_blank"><i class="fab fa-unsplash"></i> Unsplash</a>
-                        <a href="https://sunxme.lofter.com/" target="_blank"><i class="fas fa-photo-video"></i> Portfolio</a>
-                        <a href="https://sunxme.lofter.com/" target="_blank"><i class="fas fa-photo-video"></i> Facebook</a>
-                        <span class="unavailable"><i class="fas fa-photo-video"></i> Twitter</span>
-                    </div>
-                </div>
-            </div> -->
-
-
+    <div class="lightbox" onclick='closeLightbox()'>
+        <div class="lightbox-image-container">
+            <img id="lightbox-image" src="https://images.unsplash.com/photo-1601762637593-2e24fc4b08b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNjczNjh8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MzQxNTQ5NDI&ixlib=rb-1.2.1&q=80&w=400" alt="">
         </div>
     </div>
     
