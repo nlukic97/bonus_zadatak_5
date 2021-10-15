@@ -54,15 +54,20 @@ async function getPhotots(){
      * to not use up the api calls on unsplash) 
      * */
 
-     //return appendElements(JSON.parse(localStorage.getItem('api_data'))) 
+     //greturn appendElements(JSON.parse(localStorage.getItem('api_data'))) 
 
     let data = await fetch(endpoint)
     .then(function(response){
+        // console.log(response.status);
         return response.json()
     })
     .then(data=>{
         appendElements(data)
     })
+    .catch(function(e) {
+        alert('Unable to get images. The API rate limit might have been exceeded.')
+        handleLoader('remove')
+    });
 }
 
 
