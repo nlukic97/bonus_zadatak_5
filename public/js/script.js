@@ -1,23 +1,74 @@
-// var endpoint = 'https://api.unsplash.com/photos/random?client_id=UZ5Ib8E_iKHyV3JZWZp2iZK_Jex0omIzfUO2sVCTfMk&count=30';
-
-// fetch(endpoint)
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then(function(jsonData){
-//         console.log(JSON.stringify(jsonData));
-//     })
+// Listener
 
 
 
-function getPhotots(){
-    return JSON.parse(localStorage.getItem('api_data'))
+var called
+var endpoint = 'https://api.unsplash.com/photos/random?client_id=UZ5Ib8E_iKHyV3JZWZp2iZK_Jex0omIzfUO2sVCTfMk&count=30';
+
+const spinnerElement = document.createElement('div')
+spinnerElement.classList.add('loader-container')
+
+spinnerElement.innerHTML = `
+<div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>`;
+
+
+
+init()
+
+
+//init
+
+
+// function to initialize everything
+function init(){
+    called = false
+    getPhotots()
+
+    window.onscroll = function(ev) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+    
+            if(called == false){
+                called = true
+                getPhotots()
+            }
+        }
+    }
+}
+
+
+async function getPhotots(){
+    handleLoader('add')
+
+    /** one liner comment underneath - for testing purposes 
+     * (take the json-data/data.json file,  create a localStorage with the key of 'api_data', 
+     * add the text from the json file, uncomment this line, and this will be the fake api call 
+     * to not use up the api calls on unsplash) 
+     * */
+
+     //return appendElements(JSON.parse(localStorage.getItem('api_data'))) 
+
+    let data = await fetch(endpoint)
+    .then(function(response){
+        return response.json()
+    })
+    .then(data=>{
+        appendElements(data)
+    })
 }
 
 
 
 
-
+// add each individual object from the array of 30 results which we get
 function appendElement(data){
     let {
             alt_description:alt, 
@@ -92,13 +143,21 @@ function appendElements(api_result){
     api_result.forEach(img=>{
         appendElement(img)
     })
+
+    called = false; //making the api call for more images possible again on scroll
+    handleLoader('remove')
 }
 
-let data = getPhotots()
-// console.log(data);
+//handling the spinner
+function handleLoader(action){
+    if(action === 'remove'){
+        document.querySelector('.loader-container').remove()
 
-appendElements(data)
-//read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
+    } else if (action === 'add'){
+        document.querySelector('.container').appendChild(spinnerElement)
+
+    }
+}
 
 
 // toggle the lightbox
