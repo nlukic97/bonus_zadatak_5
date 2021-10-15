@@ -58,8 +58,8 @@ function appendElement(data){
                 </div>
 
                 <div class="likes-downloads-container">
-                    <span><i class="fas fa-thumbs-up"></i> ${likes}</span>
-                    <span><i class="fas fa-download"></i> ${downloads}</span>
+                    <span><i class="fas fa-thumbs-up likes-icon"></i> ${likes}</span>
+                    <span><i class="fas fa-download downloads-icon"></i> ${downloads}</span>
                 </div>
             </div>
 

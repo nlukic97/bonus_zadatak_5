@@ -5,6 +5,7 @@
 
 body {
   background-color: #A2D2FF;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
 }
 
 .container {
@@ -40,6 +41,7 @@ body {
   border-radius: 50%;
   width: 33px;
   height: 33px;
+  border: 2px solid #6473fd;
 }
 .card .text-content .line-1 .avatar-username-container .username {
   font-weight: bold;
@@ -50,6 +52,13 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  font-weight: 500;
+}
+.card .text-content .line-1 .likes-downloads-container .likes-icon {
+  color: #6473fd;
+}
+.card .text-content .line-1 .likes-downloads-container .downloads-icon {
+  color: #9964fd;
 }
 .card .text-content .links {
   display: flex;
@@ -147,10 +156,15 @@ body {
     opacity: 20%;
   }
 }
+.lightbox {
+  display: none;
+}
+
 body.lightbox-on {
   overflow: hidden;
 }
 body.lightbox-on .lightbox {
+  display: block;
   width: 100vw;
   height: 100vh;
   position: fixed;
