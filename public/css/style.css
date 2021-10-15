@@ -7,18 +7,25 @@ body {
   background-color: #A2D2FF;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
 .card {
-  width: 90%;
-  max-width: 500px;
   overflow: hidden;
-  background-color: whitesmoke;
-  margin: 40px auto 0;
 }
 .card .image {
   width: 100%;
+  transition: transform 0.3s;
+}
+.card .image:hover {
+  cursor: pointer;
+  filter: brightness(90%);
 }
 .card .text-content {
   padding: 10px 15px;
+  background-color: whitesmoke;
 }
 .card .text-content .line-1 {
   display: flex;
@@ -37,6 +44,12 @@ body {
 .card .text-content .line-1 .avatar-username-container .username {
   font-weight: bold;
   padding-left: 10px;
+}
+.card .text-content .line-1 .likes-downloads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .card .text-content .links {
   display: flex;
@@ -132,6 +145,46 @@ body {
   }
   100% {
     opacity: 20%;
+  }
+}
+.images {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.images .card {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 687px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 40px;
+  }
+  .images .card {
+    width: 100%;
+    margin: unset;
+    max-width: unset;
+  }
+}
+@media screen and (min-width: 850px) {
+  .images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1150px) {
+  .images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1440px) {
+  .images {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
   }
 }
 

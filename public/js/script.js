@@ -60,7 +60,7 @@ function appendElement(data){
         div.classList.add('card')
 
         div.innerHTML = 
-        `<img class='image' src="${urls.small}" alt="Unsplash image">
+        `<img class='image' src="${urls.small}" alt="Unsplash image" onclick="openWindow('${urls.small}')">
                 
         <div class="text-content">
             <div class="line-1">
@@ -111,3 +111,7 @@ let data = getPhotots()
 
 appendElements(data)
 //read this: https://web.dev/samesite-cookies-explained/?utm_source=devtools
+
+function openWindow(url){
+    console.log(url);
+}

@@ -1,0 +1,50 @@
+.images {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    
+    .card {
+        // max-width: 300px;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+}
+
+@media screen and(min-width: 687px) {
+    .images {
+        grid-template-columns: repeat(2,1fr);
+        margin: 40px;
+
+        .card {
+            width: 100%;
+            margin: unset;
+            max-width: unset;
+        }
+    }
+}
+
+@media screen and(min-width: 850px) {
+    .images {
+        grid-template-columns: repeat(3,1fr);
+        // gap: 40px;
+    }
+}
+
+@media screen and(min-width: 1150px) {
+    .images {
+        grid-template-columns: repeat(3,1fr);
+        // gap: 40px;
+    }
+}
+
+@media screen and(min-width: 1440px) {
+    .images {
+        grid-template-columns: repeat(4,1fr);
+        // gap: 40px;
+        margin: 0 auto;
+    }
+}
