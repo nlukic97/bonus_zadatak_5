@@ -4,7 +4,6 @@
     gap: 20px;
     
     .card {
-        // max-width: 300px;
         width: 80%;
         margin: 0 auto;
         display: flex;
@@ -15,6 +14,11 @@
 }
 
 @media screen and(min-width: 687px) {
+    nav {
+        button {
+            display: inline-block;
+        }
+    }
     .images {
         grid-template-columns: repeat(2,1fr);
         margin: 40px;
@@ -25,20 +29,27 @@
             max-width: unset;
         }
     }
+
+    // If the user decides to change the layout to be a list.
+    body.list {
+        .images {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
 }
 
 @media screen and(min-width: 850px) {
     .images {
         grid-template-columns: repeat(3,1fr);
-        // gap: 40px;
     }
+    
+    
 }
 
 @media screen and(min-width: 1150px) {
     .images {
         grid-template-columns: repeat(3,1fr);
         margin: 0 auto;
-        // gap: 40px;
     }
 }
 

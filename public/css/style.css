@@ -197,6 +197,38 @@ body.lightbox-on .lightbox .lightbox-image-container #lightbox-image::after {
   background-color: orange;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+nav button {
+  display: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 30px;
+  margin-right: 10px;
+}
+nav button#grid-btn {
+  opacity: 1;
+}
+nav button#list-btn {
+  opacity: 0.5;
+}
+nav button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+body.list nav button#grid-btn {
+  opacity: 0.5;
+}
+body.list nav button#list-btn {
+  opacity: 1;
+}
+
 .images {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -211,6 +243,10 @@ body.lightbox-on .lightbox .lightbox-image-container #lightbox-image::after {
 }
 
 @media screen and (min-width: 687px) {
+  nav button {
+    display: inline-block;
+  }
+
   .images {
     grid-template-columns: repeat(2, 1fr);
     margin: 40px;
@@ -219,6 +255,10 @@ body.lightbox-on .lightbox .lightbox-image-container #lightbox-image::after {
     width: 100%;
     margin: unset;
     max-width: unset;
+  }
+
+  body.list .images {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media screen and (min-width: 850px) {

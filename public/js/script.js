@@ -54,7 +54,7 @@ async function getPhotots(){
      * to not use up the api calls on unsplash) 
      * */
 
-     //greturn appendElements(JSON.parse(localStorage.getItem('api_data'))) 
+     return appendElements(JSON.parse(localStorage.getItem('api_data'))) 
 
     let data = await fetch(endpoint)
     .then(function(response){

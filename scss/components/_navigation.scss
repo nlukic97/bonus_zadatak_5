@@ -1,0 +1,44 @@
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    
+    button {
+        display: none;
+        border:none;
+        outline:none;
+        background-color: transparent;
+        font-size: 30px;
+        margin-right: 10px;
+        
+        &#grid-btn {
+            opacity: 1;
+        }
+        
+        &#list-btn {
+            opacity: 0.5;
+        }
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+body.list {
+    nav {
+        button {
+            &#grid-btn {
+                opacity: 0.5;
+            }
+            
+            &#list-btn {
+                opacity: 1;
+            }
+        }
+    }
+}
