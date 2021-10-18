@@ -47,6 +47,7 @@ function init(){
 
 async function getPhotots(){
     handleLoader('add')
+    
 
     /** one liner comment underneath - for testing purposes 
      * (take the json-data/data.json file,  create a localStorage with the key of 'api_data', 
@@ -168,7 +169,7 @@ function handleLoader(action){
         document.querySelector('.loader-container').remove()
 
     } else if (action === 'add'){
-        document.querySelector('.container').appendChild(spinnerElement)
+        document.querySelector('.images-container').appendChild(spinnerElement)
 
     }
 }
