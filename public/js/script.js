@@ -22,10 +22,10 @@ spinnerElement.innerHTML = `
 
 
 
+//init
 init()
 
 
-//init
 
 
 // function to initialize everything
@@ -54,11 +54,10 @@ async function getPhotots(){
      * to not use up the api calls on unsplash) 
      * */
 
-     return appendElements(JSON.parse(localStorage.getItem('api_data'))) 
+     //return appendElements(JSON.parse(localStorage.getItem('api_data'))) 
 
     let data = await fetch(endpoint)
     .then(function(response){
-        // console.log(response.status);
         return response.json()
     })
     .then(data=>{
@@ -131,6 +130,9 @@ function appendElement(data){
         document.querySelector('.images').appendChild(div)
 }
 
+
+
+// this will either return a url link to a social media account, or a span element which will be of a lower opacity (social media url unavailable)
 function handleUrls(url, font_awesome_class, text){
     if(url === null || url === ''){
         return  `<span class="unavailable"><i class="${font_awesome_class}"></i> ${text}</span>`
@@ -139,11 +141,16 @@ function handleUrls(url, font_awesome_class, text){
     };
 }
 
+
+
+//return a url to social media based on the provided url and username
 function handleSocialUsernames(platform, username){
     return (username === '' || username === null) ? null : `https://${platform}.com/${username}`
 }
 
 
+
+// append all api results to the DOM (forEach loop which calls 'appendElement')
 function appendElements(api_result){
     api_result.forEach(img=>{
         appendElement(img)
@@ -153,7 +160,9 @@ function appendElements(api_result){
     handleLoader('remove')
 }
 
-//handling the spinner
+
+
+//handling the spinner visibility
 function handleLoader(action){
     if(action === 'remove'){
         document.querySelector('.loader-container').remove()
@@ -165,7 +174,7 @@ function handleLoader(action){
 }
 
 
-// toggle the lightbox
+// lightbox is only visible when the body contains the class 'lightbox-on', and is toggled with these two methods:
 function openLightbox(url){
     document.querySelector('#lightbox-image').src = url
     document.body.classList.add('lightbox-on')

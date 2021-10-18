@@ -14,23 +14,24 @@
 }
 
 @media screen and(min-width: 687px) {
-    nav {
-        button {
-            display: inline-block;
-        }
-    }
     .images {
         grid-template-columns: repeat(2,1fr);
         margin: 40px;
-
+        
         .card {
             width: 100%;
             margin: unset;
             max-width: unset;
         }
     }
-
-    // If the user decides to change the layout to be a list.
+    
+    // buttons for changing the layout of images - only available from this screensize and up, not on mobile devices
+    nav {
+        button {
+            display: inline-block;
+        }
+    }
+    // If the user decides to change the layout to be a list. Again, only visible from this screensize and up, no mobile devices.
     body.list {
         .images {
             grid-template-columns: repeat(1,1fr);

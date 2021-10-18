@@ -243,10 +243,6 @@ body.list nav button#list-btn {
 }
 
 @media screen and (min-width: 687px) {
-  nav button {
-    display: inline-block;
-  }
-
   .images {
     grid-template-columns: repeat(2, 1fr);
     margin: 40px;
@@ -255,6 +251,10 @@ body.list nav button#list-btn {
     width: 100%;
     margin: unset;
     max-width: unset;
+  }
+
+  nav button {
+    display: inline-block;
   }
 
   body.list .images {
